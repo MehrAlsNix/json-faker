@@ -1,5 +1,8 @@
 # json-faker
+
 Creates JSON fixtures with [fzaninotto/Faker](https://github.com/fzaninotto/Faker)
+
+[![Build Status](https://travis-ci.org/MehrAlsNix/json-faker.svg?branch=develop)](https://travis-ci.org/MehrAlsNix/json-faker)
 
 ## Installation
 
