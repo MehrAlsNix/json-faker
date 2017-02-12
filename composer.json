@@ -1,6 +1,7 @@
 {
   "name": "mehr-als-nix/json-faker",
   "description": "Create fake JSON with fzaninotto/Faker",
+  "keywords": ["faker", "fixtures", "json"],
   "minimum-stability": "stable",
   "license": "MIT",
   "authors": [
