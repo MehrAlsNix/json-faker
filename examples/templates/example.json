@@ -1,0 +1,22 @@
+[
+  {
+    "float-value": "__RAND_FLOAT__",
+    "boolean-value": "__RAND_BOOLEAN__",
+    "number-value": "__RAND_NUMBER__",
+    "simple-text": "__RAND__TEXT__"
+  },
+  [
+    {
+      "float-value": "__RAND_FLOAT__",
+      "boolean-value": "__RAND_BOOLEAN__",
+      "number-value": "__RAND_NUMBER__",
+      "simple-text": "test test test",
+      "simple-array": ["1", 2, "__RAND_FLOAT__"]
+    },
+    {
+      "float-value": "__RAND_FLOAT__",
+      "boolean-value": "__RAND_BOOLEAN__",
+      "number-value": "__RAND_NUMBER__"
+    }
+  ]
+]
