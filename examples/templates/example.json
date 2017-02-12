@@ -1,22 +1,33 @@
-[
-  {
-    "float-value": "__RAND_FLOAT__",
-    "boolean-value": "__RAND_BOOLEAN__",
-    "number-value": "__RAND_NUMBER__",
-    "simple-text": "__RAND__TEXT__"
-  },
-  [
+{
+  "options": [
+    {
+      "__JSON_OPTIONS__": "JSON_PRETTY_PRINT|JSON_HEX_TAG|JSON_HEX_APOS|JSON_HEX_QUOT|JSON_HEX_AMP"
+    }
+  ],
+  "fixture": [
     {
       "float-value": "__RAND_FLOAT__",
       "boolean-value": "__RAND_BOOLEAN__",
       "number-value": "__RAND_NUMBER__",
-      "simple-text": "test test test",
-      "simple-array": ["1", 2, "__RAND_FLOAT__"]
+      "simple-text": "__RAND__TEXT__"
     },
-    {
-      "float-value": "__RAND_FLOAT__",
-      "boolean-value": "__RAND_BOOLEAN__",
-      "number-value": "__RAND_NUMBER__"
-    }
+    [
+      {
+        "float-value": "__RAND_FLOAT__",
+        "boolean-value": "__RAND_BOOLEAN__",
+        "number-value": "__RAND_NUMBER__",
+        "simple-text": "test test test",
+        "simple-array": [
+          "1",
+          2,
+          "__RAND_FLOAT__"
+        ]
+      },
+      {
+        "float-value": "__RAND_FLOAT__",
+        "boolean-value": "__RAND_BOOLEAN__",
+        "number-value": "__RAND_NUMBER__"
+      }
+    ]
   ]
-]
+}

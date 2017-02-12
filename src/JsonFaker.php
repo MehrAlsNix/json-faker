@@ -6,6 +6,10 @@ use Faker\Factory;
 
 class JsonFaker
 {
+    private static $OPTIONS = [
+        ['__JSON_OPTIONS__' => false]
+    ];
+
     /** @var string $jsonTemplate */
     private $jsonTemplate;
 
@@ -26,20 +30,29 @@ class JsonFaker
 
     public function __toString()
     {
-        try {
-            $json = $this->jsonTemplate;
+        $json = $this->jsonTemplate;
 
-            if ($this->fromFile) {
-                $json = file_get_contents($this->jsonTemplate);
-            }
-
-            $json = json_decode($json, true);
-            array_walk_recursive($json, [$this, 'getFakeValue']);
-        } catch (\Exception $e) {
-            var_dump($e->getMessage());
+        if ($this->fromFile) {
+            $json = file_get_contents($this->jsonTemplate);
         }
 
-        return json_encode($json, JSON_PRETTY_PRINT);
+        $json = json_decode($json, true);
+        $fixture = $json['fixture'];
+
+        self::$OPTIONS = array_merge(self::$OPTIONS[0], $json['options'][0]);
+
+        array_walk_recursive($fixture, [$this, 'getFakeValue']);
+
+        if (self::$OPTIONS['__JSON_OPTIONS__']) {
+            $options = explode('|', self::$OPTIONS['__JSON_OPTIONS__']);
+            $opt = 0;
+            foreach ($options as $option) {
+                $opt |= constant($option);
+            }
+            return json_encode($fixture, $opt);
+        } else {
+            return json_encode($fixture);
+        }
     }
 
     /**
