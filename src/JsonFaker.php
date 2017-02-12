@@ -7,7 +7,8 @@ use Faker\Factory;
 class JsonFaker
 {
     private static $OPTIONS = [
-        ['__JSON_OPTIONS__' => false]
+        '__JSON_OPTIONS__' => false,
+        '__NODE_CLONE__' => false
     ];
 
     /** @var string $jsonTemplate */
@@ -39,7 +40,11 @@ class JsonFaker
         $json = json_decode($json, true);
         $fixture = $json['fixture'];
 
-        self::$OPTIONS = array_merge(self::$OPTIONS[0], $json['options'][0]);
+        self::$OPTIONS = array_merge(self::$OPTIONS, $json['options'][0]);
+
+        if (self::$OPTIONS['__NODE_CLONE__']) {
+            $fixture = array_fill(0, (int) self::$OPTIONS['__NODE_CLONE__'], $fixture[0]);
+        }
 
         array_walk_recursive($fixture, [$this, 'getFakeValue']);
 
@@ -70,6 +75,8 @@ class JsonFaker
             $original = $this->faker->randomFloat();
         } elseif ($original === "__RAND_BOOLEAN__") {
             $original = $this->faker->randomElement([true, false]);
+        } elseif ($original === '__RAND_USERAGENT__') {
+            $original = $this->faker->userAgent;
         } elseif (is_numeric($original)) {
             if (strpos($original, '.') !== false) {
                 $original = $this->faker->randomFloat();
