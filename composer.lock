@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "23eeef403b3be44746a3b342807ab23b",
+    "content-hash": "fa8d1de70e7691249b5c14adfde4f0a6",
     "packages": [
         {
             "name": "fzaninotto/faker",
@@ -1174,7 +1174,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "^5.4 | ^7.0"
+        "php": "^5.5 | ^7.0"
     },
     "platform-dev": []
 }
