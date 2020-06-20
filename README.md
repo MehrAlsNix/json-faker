@@ -2,7 +2,8 @@
 
 Creates JSON fixtures with [fzaninotto/Faker](https://github.com/fzaninotto/Faker)
 
-[![Build Status](https://travis-ci.org/MehrAlsNix/json-faker.svg?branch=develop)](https://travis-ci.org/MehrAlsNix/json-faker)
+[![Build Status](https://travis-ci.org/MehrAlsNix/json-faker.svg?branch=master)](https://travis-ci.org/MehrAlsNix/json-faker)
+[![Total Downloads](https://poser.pugx.org/mehr-als-nix/json-faker/downloads)](https://packagist.org/packages/mehr-als-nix/json-faker)
 
 ## Installation
 

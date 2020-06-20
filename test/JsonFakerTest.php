@@ -3,7 +3,7 @@
 namespace MehrAlsNix\Test\JsonFaker;
 
 use MehrAlsNix\JsonFaker\JsonFaker;
-use PHPUnit_Framework_TestCase as TestCase;
+use PHPUnit\Framework\TestCase;
 
 class JsonFakerTest extends TestCase
 {
@@ -11,13 +11,13 @@ class JsonFakerTest extends TestCase
     private $jsonFaker;
     private $json;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->json = __DIR__ . '/../examples/templates/example.json';
         $this->jsonFaker = new JsonFaker($this->json);
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         $this->json = null;
         $this->jsonFaker = null;

@@ -54,22 +54,23 @@ class JsonFaker
             foreach ($options as $option) {
                 $opt |= constant($option);
             }
-            return json_encode($fixture, $opt);
-        } else {
-            return json_encode($fixture);
+            return (string) json_encode($fixture, $opt);
         }
+
+        return (string) json_encode($fixture);
     }
 
     /**
-     * @param string $original
-     * @param $key
-     * @return float|int|mixed|string
+     * @param mixed $original
+     * @return mixed
      */
     private function getFakeValue(&$original)
     {
         if (is_array($original) || is_object($original)) {
             return $original;
-        } elseif ($original === "__RAND_NUMBER__") {
+        }
+
+        if ($original === "__RAND_NUMBER__") {
             $original = $this->faker->randomNumber();
         } elseif ($original === "__RAND_FLOAT__") {
             $original = $this->faker->randomFloat();
@@ -94,5 +95,7 @@ class JsonFaker
                 $original = implode(' ', $this->faker->words($wordCount));
             }
         }
+        
+        return $original;
     }
 }
